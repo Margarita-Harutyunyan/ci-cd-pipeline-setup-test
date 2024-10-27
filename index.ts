@@ -1,2 +1,1 @@
-const x: any = 5;
-console.log(x);
+console.log('hello');
