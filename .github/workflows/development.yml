@@ -7,7 +7,6 @@ on:
       - edited
       - synchronize
       - reopened
-    workflow_call:
 
 jobs:
   lint:
@@ -16,15 +15,18 @@ jobs:
     timeout-minutes: 10
     steps:
       - name: "☁️ checkout repository"
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: "🔧 setup node"
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
           node-version: '22'
 
-      - name: "📦 install dependencies"
+      - name: "🔧 install npm@latest"
+        run: npm i -g npm@latest
+        
+      - name: "🔧 install dependencies"
         run: npm install
 
       - name: "🔍 lint code"
-        run: npm run lint
+        run: npm run lint --if-present
