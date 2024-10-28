@@ -1,3 +1,5 @@
 console.log('hello');
 
-const x:any = 'hello';
+const x = 'hello';
+
+console.log(x);
