@@ -1,3 +1,3 @@
 console.log('hello');
 
-const x: any = 5;
+const a: any = 5;
