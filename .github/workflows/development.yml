@@ -7,7 +7,6 @@ on:
       - edited
       - synchronize
       - reopened
-    workflow_call:
 
 jobs:
   lint:
@@ -25,6 +24,9 @@ jobs:
 
       - name: "🔧 install npm@latest"
         run: npm i -g npm@latest
+        
+      - name: "🔧 install dependencies"
+        run: npm install
 
       - name: "🔍 lint code"
         run: npm run lint --if-present
